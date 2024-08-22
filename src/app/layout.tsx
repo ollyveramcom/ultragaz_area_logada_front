@@ -1,12 +1,37 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
 
 import "@/styles/globals.scss";
 
-const roboto = Roboto({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
+const mangueira = localFont({
+  src: [
+    {
+      path: "../assets/fonts/mangueira/Mangueira-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/mangueira/Mangueira-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/mangueira/Mangueira-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/mangueira/Mangueira-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/mangueira/Mangueira-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  display: "swap"
 });
 
 export const metadata: Metadata = {
@@ -21,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${roboto.className} container mx-auto`}>
+      <body className={`${mangueira.className}`}>
         {children}
       </body>
     </html>
